@@ -16,9 +16,9 @@ int main() {
     assert(5_deg < 10_deg);
     assert(360_deg > 3_rad);
     assert(2 * 180_deg == Radians(2*PI));
-    assert(simplified(360_deg) == Angle{});
-    assert(simplified(750_deg) == 30_deg);
-    assert(simplified(-120_deg) == 240_deg);
+    assert(Simplified(360_deg) == Angle{});
+    assert(Simplified(750_deg) == 30_deg);
+    assert(Simplified(-120_deg) == 240_deg);
 
 }
 

@@ -14,7 +14,7 @@
 namespace stdx {
 inline namespace FloatCmpNs {
 
-int fcmp(float a, float b);
+int Fcmp(float a, float b);
 
 }
 }

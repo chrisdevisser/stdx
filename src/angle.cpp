@@ -30,21 +30,21 @@ Angle operator%(Angle lhs, const Angle &rhs) noexcept {lhs %= rhs; return lhs;}
 Angle operator+(const Angle &angle) noexcept {return angle;}
 Angle operator-(const Angle &angle) noexcept {return Radians{-angle.rad()};}
 
-bool operator<(const Angle &lhs, const Angle &rhs) {return fcmp(lhs.rad(), rhs.rad()) < 0;}
-bool operator>(const Angle &lhs, const Angle &rhs) {return fcmp(lhs.rad(), rhs.rad()) > 0;}
-bool operator==(const Angle &lhs, const Angle &rhs) {return fcmp(lhs.rad(), rhs.rad()) == 0;}
+bool operator<(const Angle &lhs, const Angle &rhs) {return Fcmp(lhs.rad(), rhs.rad()) < 0;}
+bool operator>(const Angle &lhs, const Angle &rhs) {return rhs < lhs;}
+bool operator==(const Angle &lhs, const Angle &rhs) {return Fcmp(lhs.rad(), rhs.rad()) == 0;}
 bool operator<=(const Angle &lhs, const Angle &rhs) {return lhs < rhs || lhs == rhs;}
 bool operator>=(const Angle &lhs, const Angle &rhs) {return lhs > rhs || lhs == rhs;}
 bool operator!=(const Angle &lhs, const Angle &rhs) {return !(lhs == rhs);}
 
-Angle &simplify(Angle &angle) noexcept {
+Angle &Simplify(Angle &angle) noexcept {
     angle %= 360_deg;
     if (angle < 0_rad) angle += 360_deg;
     return angle;
 }
 
-Angle simplified(Angle angle) noexcept {
-    simplify(angle);
+Angle Simplified(Angle angle) noexcept {
+    Simplify(angle);
     return angle;
 }
 

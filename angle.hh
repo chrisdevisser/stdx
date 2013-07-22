@@ -66,8 +66,8 @@ bool operator>=(const Angle &lhs, const Angle &rhs);
 bool operator==(const Angle &lhs, const Angle &rhs);
 bool operator!=(const Angle &lhs, const Angle &rhs);
 
-Angle &simplify(Angle &angle) noexcept;
-Angle simplified(Angle angle) noexcept;
+Angle &Simplify(Angle &angle) noexcept;
+Angle Simplified(Angle angle) noexcept;
 
 struct Degrees {
     constexpr explicit Degrees(const long double deg) noexcept : deg_{deg} {}
