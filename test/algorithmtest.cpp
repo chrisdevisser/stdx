@@ -7,6 +7,7 @@
 #include <initializer_list>
 #include <iostream>
 #include <iterator>
+#include <list>
 #include <vector>
 #include "../algorithm.hh"
 
@@ -26,7 +27,8 @@ int main() {
     std::cout << "v (ForEach): ";
     ForEach(v, uf); std::cout << "\n";
 
-    assert(Accumulate(v, 0) == 3+5+8+2+10);
+    int acc[] = {3, 5, 8, 2, 10};
+    assert(Accumulate(acc, 0) == 3+5+8+2+10);
     assert(Accumulate(v, 1, std::multiplies<int>()) == 3*5*8*2*10);
 
     AdjacentDifference(v, std::begin(v2));
@@ -268,15 +270,15 @@ int main() {
     static_assert(sizeof(minmaxArr2)/sizeof(minmaxArr2[0]) == 9, "");
 
     std::vector<int> toSplit{2, 5, 4, 2, 3, 9, 2};
-    auto split = Split(toSplit, 2);
-    std::vector<std::vector<int>> rightSplit{{}, {5, 4}, {3, 9}, {}};
+    auto split = Split<std::list>(toSplit, 2);
+    std::list<std::vector<int>> rightSplit{{}, {5, 4}, {3, 9}, {}};
     assert(split == rightSplit);
 
     toSplit = {2, 2, 5, 4, 2, 3, 2, 2, 1, 2, 9};
     v2 = {2, 2};
-    split = Split(toSplit, v2);
+    split = Split<std::list>(toSplit, v2);
     rightSplit = {{}, {5, 4, 2, 3}, {1, 2, 9}};
     assert(split == rightSplit);
 
-    assert(Size({1, 2}) == 2);
+    assert(Size(std::vector<int>{1, 2}) == 2);
 }
