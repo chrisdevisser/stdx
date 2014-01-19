@@ -20,7 +20,7 @@ Components
 
 The utilities are as follows:
 
-[Angle](angle/angle.md)
+[Angle](Angle/angle.md)
 -
 
 - One `Angle` class
