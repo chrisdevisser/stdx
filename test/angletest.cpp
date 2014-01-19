@@ -1,7 +1,3 @@
-//Copyright Chris DeVisser 2013
-//Code may be used freely in personal and commercial environments.
-//Compiled with GCC 4.8.1 and MinGWBuilds - http://sourceforge.net/projects/mingwbuilds/
-
 #include <cassert>
 #include "../angle.hh"
 

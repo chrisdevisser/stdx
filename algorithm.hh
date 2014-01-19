@@ -1,7 +1,3 @@
-//Copyright Chris DeVisser 2013
-//Code may be used freely in personal and commercial environments.
-//Compiled with GCC 4.8.1 and MinGWBuilds - http://sourceforge.net/projects/mingwbuilds/
-
 //Wraps standard algorithms to take a container and assume begin() and end().
 //Wraps those found in <numeric> as well.
 //Work with built-in arrays.

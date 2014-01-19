@@ -1,7 +1,3 @@
-#include <cassert>
-#include <string>
-#include "../string.hh"
-
 int main() {
     using namespace stdx::StringNs;
 
