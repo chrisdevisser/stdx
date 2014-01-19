@@ -6,9 +6,6 @@
 namespace stdx {
 inline namespace AngleNs {
 
-long double Angle::deg() const noexcept {return rad_ / PI * 180;}
-long double Angle::rad() const noexcept {return rad_;}
-
 Angle &Angle::operator+=(const Angle &rhs) noexcept {rad_ += rhs.rad(); return *this;}
 Angle &Angle::operator-=(const Angle &rhs) noexcept {rad_ -= rhs.rad(); return *this;}
 Angle &Angle::operator*=(const long double rhs) noexcept {rad_ *= rhs; return *this;}
@@ -20,7 +17,7 @@ Angle operator-(Angle lhs, const Angle &rhs) noexcept {lhs -= rhs; return lhs;}
 Angle operator*(Angle lhs, const long double rhs) noexcept {lhs *= rhs; return lhs;}
 Angle operator*(const long double lhs, Angle rhs) noexcept {rhs *= lhs; return rhs;}
 Angle operator/(Angle lhs, const long double rhs) noexcept {lhs /= rhs; return lhs;}
-Angle operator/(const long double lhs, Angle rhs) noexcept {rhs /= lhs; return rhs;}
+long double operator/(const Angle &lhs, const Angle &rhs) noexcept {return lhs.rad() / rhs.rad();}
 Angle operator%(Angle lhs, const Angle &rhs) noexcept {lhs %= rhs; return lhs;}
 
 Angle operator+(const Angle &angle) noexcept {return angle;}

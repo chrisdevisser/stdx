@@ -1,11 +1,18 @@
 #include <cassert>
 #include "../angle.hh"
+#include "../compiler_diagnostics.hh"
 
 int main() {
     using namespace stdx::AngleNs;
 
     constexpr Angle a;
     constexpr Angle b{23_deg};
+
+    STDX_PRAGMA_PUSH
+    STDX_PRAGMA_IGNORE_STR("-Wfloat-equal")
+    static_assert(Angle{}.rad() == 0.0L, "Default constructed radians.");
+    static_assert(Angle{}.deg() == 0.0L, "Default constructed degrees.");
+    STDX_PRAGMA_POP
 
     assert(a != b);
     assert(5_deg + 6_rad != 6_deg + 5_rad);

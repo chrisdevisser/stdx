@@ -1,8 +1,18 @@
+### Overview
+
 This is a set of C++ utilities implemented using only the standard headers. Boost is a slight possibility if something would really benefit from it. All headers have a .hh extension. This is very reliant on C++11 and will become more reliant on C++14 as more features become available.
 
-I aim for a clean build with at least -Wall, -Wextra, and -pedantic, as well as -Wno-missing-field-initializers.
+### Compiling
 
----
+The code compiles with GCC 4.8.1 and the following options:
+
+    -std=c++1y -Wall -Wextra -pedantic-errors
+
+### Documentation
+
+You can read the documentation [here](doc/doc_home.md).
+
+### License
 
 All of the source code is distributed under the Boost Software License:
 
