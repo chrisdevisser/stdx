@@ -6,6 +6,17 @@
 namespace stdx {
 inline namespace AngleNs {
 
+//50 digits to be safe
+constexpr long double PI = 3.14159265358979323846264338327950288419716939937510L;
+
+Angle::Angle() noexcept : rad_{} {}
+
+long double Angle::deg() const noexcept {return rad_ / PI * 180.0L;}
+long double Angle::rad() const noexcept {return rad_;}
+
+//private constructor
+Angle::Angle(const long double _rad) noexcept : rad_{_rad} {}
+
 Angle &Angle::operator+=(const Angle &rhs) noexcept {rad_ += rhs.rad(); return *this;}
 Angle &Angle::operator-=(const Angle &rhs) noexcept {rad_ -= rhs.rad(); return *this;}
 Angle &Angle::operator*=(const long double rhs) noexcept {rad_ *= rhs; return *this;}
@@ -39,6 +50,19 @@ Angle &Simplify(Angle &angle) noexcept {
 Angle Simplified(Angle angle) noexcept {
     Simplify(angle);
     return angle;
+}
+
+Degrees::Degrees(const long double deg) noexcept : deg_{deg} {}
+Degrees::operator Angle() const noexcept {return deg_ / 180 * PI;}
+
+Radians::Radians(const long double rad) noexcept : rad_{rad} {}
+Radians::operator Angle() const noexcept {return rad_;}
+
+inline namespace lit {
+    Degrees operator"" _deg(const long double deg) noexcept {return Degrees{deg};}
+    Degrees operator"" _deg(const unsigned long long deg) noexcept {return Degrees(deg);}
+    Radians operator"" _rad(const long double rad) noexcept {return Radians{rad};}
+    Radians operator"" _rad(const unsigned long long rad) noexcept {return Radians(rad);}
 }
 
 }

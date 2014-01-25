@@ -15,8 +15,8 @@ Members
 Free Functions
 =
 
-- [`Simplify`](free/simplify.md) - Simplifies an angle to [0, 2 pi) in place
-- [`Simplified`](free/simplify.md) - Returns an angle simplified to [0, 2 pi)
+- [`Simplify`](../free/simplify.md) - Simplifies an angle to [0, 2 pi) in place
+- [`Simplified`](../free/simplify.md) - Returns an angle simplified to [0, 2 pi)
 
 Operators
 =
@@ -40,9 +40,3 @@ Operators
 - [`operator>=`](operators/greater.md) - Calculates whether one Angle is greater than or equal to another
 - [`operator==`](operators/equal.md) - Calculates whether one Angle is equal to another
 - [`operator!=`](operators/equal.md) - Calculates whether one Angle is not equal to another
-
-User-Defined Literals
-=
-
-- [`deg`](udls/deg.md) - Creates a `Degrees` object
-- [`rad`](udls/rad.md) - Creates a `Radians` object

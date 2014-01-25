@@ -11,15 +11,10 @@ Namespace
     - `AngleNs` (inline) - everything Angle
         - `lit` (inline) - user-defined literals 
 
-Requirements
+Dependencies
 =
 
 - [Floatcmp](../Floatcmp/floatcmp.md)
-
-Constants
-=
-
-- `PI` - 50 digits of pi
 
 Classes
 =
@@ -38,3 +33,11 @@ Classes
 Free Functions
 =
 
+- [`Simplify`](../free/simplify.md) - Simplifies an angle to [0, 2 pi) in place
+- [`Simplified`](../free/simplify.md) - Returns an angle simplified to [0, 2 pi)
+
+User-Defined Literals
+=
+
+- [`deg`](udls/deg.md) - Creates a `Degrees` object
+- [`rad`](udls/rad.md) - Creates a `Radians` object

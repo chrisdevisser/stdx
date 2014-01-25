@@ -19,20 +19,17 @@
 namespace stdx {
 inline namespace AngleNs {
 
-//50 digits to be safe
-constexpr long double PI = 3.14159265358979323846264338327950288419716939937510;
-
-class Degrees;
-class Radians;
+struct Degrees;
+struct Radians;
 
 struct Angle {
-    friend class Degrees;
-    friend class Radians;
+    friend struct Degrees;
+    friend struct Radians;
 
-    constexpr Angle() noexcept : rad_{} {};
+    Angle() noexcept;
 
-    constexpr long double deg() const noexcept {return rad_ / PI * 180.0L;}
-    constexpr long double rad() const noexcept {return rad_;}
+    long double deg() const noexcept;
+    long double rad() const noexcept;
 
     Angle &operator+=(const Angle &rhs) noexcept;
     Angle &operator-=(const Angle &rhs) noexcept;
@@ -43,7 +40,8 @@ struct Angle {
 private:
     long double rad_;
 
-    constexpr Angle(const long double _rad) noexcept : rad_{_rad} {}
+    //only Degrees and Radians can use
+    Angle(const long double _rad) noexcept;
 };
 
 Angle operator+(Angle lhs, const Angle &rhs) noexcept;
@@ -69,26 +67,26 @@ Angle &Simplify(Angle &angle) noexcept;
 Angle Simplified(Angle angle) noexcept;
 
 struct Degrees {
-    constexpr explicit Degrees(const long double deg) noexcept : deg_{deg} {}
-    constexpr operator Angle() const noexcept {return deg_ / 180 * PI;}
+    explicit Degrees(const long double deg) noexcept;
+    operator Angle() const noexcept;
 
 private:
     const long double deg_;
 };
 
 struct Radians {
-    constexpr explicit Radians(const long double rad) noexcept : rad_{rad} {}
-    constexpr operator Angle() const noexcept {return rad_;}
+    explicit Radians(const long double rad) noexcept;
+    operator Angle() const noexcept;
 
 private:
     const long double rad_;
 };
 
 inline namespace lit {
-    constexpr Degrees operator"" _deg(const long double deg) noexcept {return Degrees{deg};}
-    constexpr Degrees operator"" _deg(const unsigned long long deg) noexcept {return Degrees(deg);}
-    constexpr Radians operator"" _rad(const long double rad) noexcept {return Radians{rad};}
-    constexpr Radians operator"" _rad(const unsigned long long rad) noexcept {return Radians(rad);}
+    Degrees operator"" _deg(const long double deg) noexcept;
+    Degrees operator"" _deg(const unsigned long long deg) noexcept;
+    Radians operator"" _rad(const long double rad) noexcept;
+    Radians operator"" _rad(const unsigned long long rad) noexcept;
 }
 
 }

@@ -1,7 +1,7 @@
 Summary
 =
 
-`stdx` is a bunch of extensions to the C++ standard library. All should compile with GCC 4.8.1 and the following options:
+`stdx` is a bunch of extensions to the C++ standard library. All should compile with Clang 3.5 and the following options:
 
     -std=c++1y -Wall -Wextra -pedantic-errors
 
@@ -10,7 +10,7 @@ Namespace
 
 Everything is in the `stdx` namespace.
 
-Requirements
+Dependencies
 =
 
 None at this time. Possibly Boost in the future.
