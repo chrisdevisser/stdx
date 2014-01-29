@@ -1,18 +1,22 @@
-### Overview
+Overview
+=
 
-This is a set of C++ utilities implemented using only the standard headers. Boost is a slight possibility if something would really benefit from it. All headers have a .hh extension. This is very reliant on C++11 and will become more reliant on C++14 as more features become available.
+This is a set of C++ utilities implemented using only the standard headers. Boost is a slight possibility if something would really benefit from it. All headers have a .hh extension. This is reliant on C++14.
 
-### Compiling
+Compiling
+=
 
-The code compiles with GCC 4.8.1 and the following options:
+The code compiles with Clang 3.5 and the following options:
 
     -std=c++1y -Wall -Wextra -pedantic-errors
 
-### Documentation
+Documentation
+=
 
 You can read the documentation [here](doc/doc_home.md).
 
-### License
+License
+=
 
 All of the source code is distributed under the Boost Software License:
 

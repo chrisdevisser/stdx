@@ -23,7 +23,7 @@ The utilities are as follows:
 [Angle](Angle/angle.md)
 -
 
-- One `Angle` class
-- Can be created from `Degree` and `Radian` classes
-- Provides `deg` and `rad` functions
-- Provides user-defined literals
+- One [`Angle`](Angle/classes/angle.md) class
+- Can be created from [`Degrees`](Angle/classes/degrees.md) and [`Radians`](Angle/classes/radians.md) classes
+- Provides `deg` and `rad` functions to retrieve the value as needed
+- Provides user-defined literals `_deg` and `_rad` to create literal angles

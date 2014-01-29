@@ -33,22 +33,22 @@ struct Angle {
 
     Angle &operator+=(const Angle &rhs) noexcept;
     Angle &operator-=(const Angle &rhs) noexcept;
-    Angle &operator*=(const long double rhs) noexcept;
-    Angle &operator/=(const long double rhs) noexcept;
+    Angle &operator*=(long double rhs) noexcept;
+    Angle &operator/=(long double rhs) noexcept;
     Angle &operator%=(const Angle &rhs) noexcept;
 
 private:
     long double rad_;
 
     //only Degrees and Radians can use
-    Angle(const long double _rad) noexcept;
+    Angle(long double _rad) noexcept;
 };
 
 Angle operator+(Angle lhs, const Angle &rhs) noexcept;
 Angle operator-(Angle lhs, const Angle &rhs) noexcept;
-Angle operator*(Angle lhs, const long double rhs) noexcept;
+Angle operator*(Angle lhs, long double rhs) noexcept;
 Angle operator*(const long double lhs, Angle rhs) noexcept;
-Angle operator/(Angle lhs, const long double rhs) noexcept;
+Angle operator/(Angle lhs, long double rhs) noexcept;
 long double operator/(Angle lhs, const Angle &rhs) noexcept;
 Angle operator%(Angle lhs, const Angle &rhs) noexcept;
 
@@ -67,7 +67,7 @@ Angle &Simplify(Angle &angle) noexcept;
 Angle Simplified(Angle angle) noexcept;
 
 struct Degrees {
-    explicit Degrees(const long double deg) noexcept;
+    explicit Degrees(long double deg) noexcept;
     operator Angle() const noexcept;
 
 private:
@@ -75,7 +75,7 @@ private:
 };
 
 struct Radians {
-    explicit Radians(const long double rad) noexcept;
+    explicit Radians(long double rad) noexcept;
     operator Angle() const noexcept;
 
 private:
@@ -83,10 +83,10 @@ private:
 };
 
 inline namespace lit {
-    Degrees operator"" _deg(const long double deg) noexcept;
-    Degrees operator"" _deg(const unsigned long long deg) noexcept;
-    Radians operator"" _rad(const long double rad) noexcept;
-    Radians operator"" _rad(const unsigned long long rad) noexcept;
+    Degrees operator"" _deg(long double deg) noexcept;
+    Degrees operator"" _deg(unsigned long long deg) noexcept;
+    Radians operator"" _rad(long double rad) noexcept;
+    Radians operator"" _rad(unsigned long long rad) noexcept;
 }
 
 }

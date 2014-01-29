@@ -19,25 +19,21 @@ Dependencies
 Classes
 =
 
-- [Angle](classes/angle.md) - Store an angle with any units
-- [Degrees](classes/degrees.md) - Helper class to create an Angle from degrees
+- [`Angle`](classes/angle.md) - Store an angle with any units
+- [`Degrees`](classes/degrees.md) - Helper class to create an `Angle` from degrees
 
-- Helper class to create [Angle](classes/angle.md)
-- Can be created with [_deg](udls/deg.md) suffix
-
-- [Radians](classes/radians.md) - Helper class to create an Angle from radians
-
-- Helper class to create [Angle](classes/angle.md)
-- Can be created with [_rad](udls/rad.md) suffix
+- [`Radians`](classes/radians.md) - Helper class to create an `Angle` from radians
 
 Free Functions
 =
 
-- [`Simplify`](../free/simplify.md) - Simplifies an angle to [0, 2 pi) in place
-- [`Simplified`](../free/simplify.md) - Returns an angle simplified to [0, 2 pi)
+- [`Simplify`](classes/angle.md) - Simplifies an angle to `[0, 2 pi)` in place
+- [`Simplified`](classes/angle.md) - Returns an angle simplified to `[0, 2 pi)`
 
 User-Defined Literals
 =
 
-- [`deg`](udls/deg.md) - Creates a `Degrees` object
-- [`rad`](udls/rad.md) - Creates a `Radians` object
+- [`_deg`](classes/degrees.md) - Creates a `Degrees` object
+- [`_rad`](classes/radians.md) - Creates a `Radians` object
+
+

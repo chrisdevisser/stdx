@@ -5,38 +5,88 @@ Summary
 - Acts like a numeric type
 - Conversion to degrees and radians
 
+Constructors
+=
+
+    Angle();
+
+Creates a new angle with a value of 0.
+
 Members
 =
 
-- [(constructor)](members/ctor) - Creates a new instance
-- [`deg`](members/deg) - Gets value in degrees
-- [`rad`](members/rad) - Gets value in radians
+    long double deg() const noexcept;
+
+Retrieves the angle value in degrees. This retrieval causes a conversion calculation.
+
+    long double rad() const noexcept;
+
+Retrieves the angle value in radians. No conversion calculation will occur.
 
 Free Functions
 =
 
-- [`Simplify`](../free/simplify.md) - Simplifies an angle to [0, 2 pi) in place
-- [`Simplified`](../free/simplify.md) - Returns an angle simplified to [0, 2 pi)
+    Angle &Simplify(Angle &angle) noexcept;
+
+Fits `angle` to the range `[0, 2 pi)` in place. 
+
+    Angle Simplified(Angle angle) noexcept;
+
+Returns `angle` fitted to the range `[0, 2 pi)`.
 
 Operators
 =
 
-- [`operator=`](operators/assign.md) - Assigns the value of another Angle
-- [`operator+`](operators/plus.md) - Adds two Angles
-- [`operator+=`](operators/plus.md) - Adds another Angle
-- [`operator-`](operators/minus.md) - Subtracts one Angle from another
-- [`operator-=`](operators/plus.md) - Subtracts another Angle
-- [`operator*`](operators/times.md) - Scales an Angle
-- [`operator*=`](operators/plus.md) - Scales Angle
-- [`operator/`](operators/divide.md) - Shrinks an angle or divides two Angles
-- [`operator/=`](operators/divide.md) - Shrinks Angle 
-- [`operator%`](operators/remainder.md) - Calculates remainder of one Angle divided by another. The resulting sign is the sign of the first argument
-- [`operator%=`](operators/remainder.md) - Takes on the remainder of being divided by another Angle. The sign is left unchanged. 
-- [`operator+`](operators/unaryplus.md) - Takes the positive value of an Angle
-- [`operator-`](operators/negate.md) - Calculates the negative of an Angle
-- [`operator<`](operators/less.md) - Calculates whether one Angle is smaller than another
-- [`operator<=`](operators/less.md) - Calculates whether one Angle is smaller than or equal to another
-- [`operator>`](operators/greater.md) - Calculates whether one Angle is greater than another
-- [`operator>=`](operators/greater.md) - Calculates whether one Angle is greater than or equal to another
-- [`operator==`](operators/equal.md) - Calculates whether one Angle is equal to another
-- [`operator!=`](operators/equal.md) - Calculates whether one Angle is not equal to another
+    Angle operator+(Angle lhs, const Angle &rhs) noexcept;
+    Angle &operator+=(const Angle &rhs) noexcept;
+
+Adds two angles together. For example, pi radians + 180 degrees = 360 degrees or 2 pi radians.
+
+    Angle operator-(Angle lhs, const Angle &rhs) noexcept;
+    Angle &operator-=(const Angle &rhs) noexcept;
+
+Subtracts one angle from another. For example, 360 degrees - pi radians = 180 degrees or pi radians.
+
+    Angle operator*(Angle lhs, const long double rhs) noexcept;
+    Angle operator*(const long double lhs, Angle rhs) noexcept;
+    Angle &operator*=(const long double rhs) noexcept;
+
+Scales an angle. For example, 2 * 180 degrees = 2 pi radians or 360 degrees.
+
+    long double operator/(Angle lhs, const Angle &rhs) noexcept; (1)
+    Angle operator/(Angle lhs, const long double rhs) noexcept; (2)
+    Angle &operator/=(const long double rhs) noexcept;
+
+1) Returns one angle as a fraction of another. For example, 30 degrees / 180 degrees = 1/6.   
+2,3) Scales the angle downwards. For example, 360 degrees / 2 = 180 degrees or pi radians.
+
+    Angle operator%(Angle lhs, const Angle &rhs) noexcept;
+    Angle &operator%=(const Angle &rhs) noexcept;
+
+Calculates the remainder of one angle divided by another. If only one argument is negative, the sign of the result is undefined.
+
+    Angle operator+(const Angle &angle) noexcept;
+
+Takes the positive of an angle. For example, +(2 radians) is 2 radians.
+
+    Angle operator-(const Angle &angle) noexcept;
+
+Takes the negative of an angle. For example, -(200 degrees) is -200 degrees.
+
+    bool operator<(const Angle &lhs, const Angle &rhs);
+    bool operator<=(const Angle &lhs, const Angle &rhs);
+
+Determines whether one angle is less than (or equal to) another. For example, 100 degrees < pi radians.
+
+    bool operator>(const Angle &lhs, const Angle &rhs);
+    bool operator>=(const Angle &lhs, const Angle &rhs);
+
+Determines whether one angle is greater than (or equal to) another. For example, 360 degrees > pi radians.
+    
+    bool operator==(const Angle &lhs, const Angle &rhs);
+
+Determines whether one angle is equal to another. For example, pi radians == 180 degrees.
+
+    bool operator!=(const Angle &lhs, const Angle &rhs);
+
+Determines whether one angle is not equal to another. For example, 3 radians != 10 degrees.

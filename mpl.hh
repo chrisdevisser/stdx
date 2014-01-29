@@ -153,8 +153,10 @@ namespace detail {
 template<typename T> constexpr bool IsBothCv{detail::IsBothCv<T>::value};
 template<typename T> constexpr bool IsEitherCv{detail::IsEitherCv<T>::value};
 template<typename T> constexpr bool IsNullPointer{detail::IsNullPointer<T>::value};
+
 template<bool B, typename T = void> using DisableIf = EnableIf<!B, T>;
 template<typename T> using Id = T;
+template<bool B, typename T, typename F> using If = Conditional<B, T, F>;
 
 namespace detail {
     template<typename T> struct Bare {using type = T;};
