@@ -1,12 +1,6 @@
-#ifndef STDX_PREPROCESSOR_H
-#define STDX_PREPROCESSOR_H
+#pragma once
 
-//Defines preprocessor operations.
-
-#define STDX_PP_STRINGIFY2(x) #x
-#define STDX_PP_CONCAT2(x, y) x##y
-
-#define STDX_PP_STRINGIFY(x) STDX_PP_STRINGIFY2(x)
-#define STDX_PP_CONCAT(x, y) STDX_PP_CONCAT2(x, y)
-
-#endif
+#include <stdx/preprocessor/cat.hh>
+#include <stdx/preprocessor/overload.hh>
+#include <stdx/preprocessor/stringize.hh>
+#include <stdx/preprocessor/variadic/size.hh>

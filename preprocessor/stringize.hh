@@ -1,0 +1,4 @@
+#pragma once
+
+#define STDX_PP_STRINGIZE(x) IMPL_STDX_PP_STRINGIZE(x)
+#define IMPL_STDX_PP_STRINGIZE(x) #x
