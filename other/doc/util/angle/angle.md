@@ -1,3 +1,5 @@
+`<stdx/util/angle.hh>`
+
 Summary
 =
 
@@ -8,13 +10,13 @@ Namespace
 
 >
 - `stdx` - main namespace       
-    - `AngleNs` (inline) - everything Angle
+    - `util` (inline) - everything Angle
         - `lit` (inline) - user-defined literals 
 
 Dependencies
 =
 
-- [Floatcmp](../Floatcmp/floatcmp.md)
+- [Floatcmp](../floatcmp/floatcmp.md)
 
 Classes
 =

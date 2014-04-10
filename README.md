@@ -1,7 +1,7 @@
 Overview
 =
 
-This is a set of C++ utilities implemented using only the standard headers. Boost is a slight possibility if something would really benefit from it. All headers have a .hh extension. This is reliant on C++14. 
+This is a set of C++ utilities implemented using only the standard headers. Boost is a possibility if I decide to add it. All headers have a .hh extension. This is reliant on C++14 and the newest compiler features I have access to. 
 
 Compiling
 =

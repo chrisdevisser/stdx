@@ -55,7 +55,7 @@ Scales an angle. For example, 2 * 180 degrees = 2 pi radians or 360 degrees.
 
     long double operator/(Angle lhs, const Angle &rhs) noexcept; (1)
     Angle operator/(Angle lhs, const long double rhs) noexcept; (2)
-    Angle &operator/=(const long double rhs) noexcept;
+    Angle &operator/=(const long double rhs) noexcept; (3)
 
 1) Returns one angle as a fraction of another. For example, 30 degrees / 180 degrees = 1/6.   
 2,3) Scales the angle downwards. For example, 360 degrees / 2 = 180 degrees or pi radians.
